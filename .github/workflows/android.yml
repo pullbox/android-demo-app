@@ -36,6 +36,8 @@ jobs:
       
 #name: Appdome build-2secure
   appdome:
+    name: Protect App with Appdome
+    needs: build
     runs-on: ubuntu-latest
     
     steps:
