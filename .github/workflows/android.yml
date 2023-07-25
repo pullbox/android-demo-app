@@ -30,7 +30,7 @@ jobs:
       uses: actions/upload-artifact@v1
       with:
         name: <<application name>>
-        path: /home/runner/work/android-demo-app/android-demo-app
+        path: /home/runner/work/android-demo-app/android-demo-app/app/build/outputs/apk/release/*.apk
       
       
       
