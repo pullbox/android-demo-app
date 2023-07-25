@@ -29,8 +29,8 @@ jobs:
     - name: Upload APK
       uses: actions/upload-artifact@v1
       with:
-        name: <<application name>>
-        path: /home/runner/work/android-demo-app/android-demo-app/app/build/outputs/apk/release/*.apk
+        name: app-release-unsigned.apk
+        path: app/build/outputs/apk/release/app-release-unsigned.apk
       
       
       
@@ -44,7 +44,7 @@ jobs:
       - name: Appdome build-2secure
         uses: Appdome/github_build-2secure@1.1.1
         with:
-          APP_FILE: "# none_protected_application can be pass as path/on/repository OR https://download_link"
+          APP_FILE: app/build/outputs/apk/release/app-release-unsigned.apk
           TEAM_ID: "0f2b8ec0-804e-11ec-8707-97e61e2ab1dd"
           FUSION_SET_ID: "ac111720-c7d7-11ec-9c26-bb3f9e9d83c4"
           SIGN_OPTIONS: "SIGN_ON_APPDOME"
@@ -56,5 +56,8 @@ jobs:
           KEYSTORE_PASSWORD: ${{secrets.KEYSTORE_PASSWORD}}
           KEYSTORE_ALIAS: ${{secrets.KEYSTORE_ALIAS}}
           KEYSTORE_KEY_PASSWORD: ${{secrets.KEYSTORE_KEY_PASS}}      
+      
+      
+      
       
       
