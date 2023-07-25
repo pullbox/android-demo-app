@@ -26,6 +26,13 @@ jobs:
       run: ./gradlew build
       
       
+    - name: Upload APK
+      uses: actions/upload-artifact@V3.1.2
+      with:
+        name: <<application name>>
+        path: /home/runner/work/android-demo-app/android-demo-app
+      
+      
       
 #name: Appdome build-2secure
   appdome:
