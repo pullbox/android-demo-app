@@ -27,13 +27,7 @@ jobs:
       
       
       
-name: Appdome build-2secure
-on:
-  push:
-    branches: [ "main" ]
-  workflow_dispatch:
-
-jobs:
+#name: Appdome build-2secure
   appdome:
     runs-on: ubuntu-latest
     
