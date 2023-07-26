@@ -41,28 +41,28 @@ jobs:
       
       
 #name: Appdome build-2secure
-  appdome:
-    name: Protect App with Appdome
-    needs: build
-    runs-on: ubuntu-latest
+#  appdome:
+#    name: Protect App with Appdome
+#    needs: build
+#    runs-on: ubuntu-latest
     
-    steps:
-      - name: Appdome build-2secure
-        uses: Appdome/github_build-2secure@1.1.1
-        with:
-          APP_FILE: app/build/outputs/apk/release/app-release-unsigned.apk
-          TEAM-ID: 0f2b8ec0-804e-11ec-8707-97e61e2ab1dd
-          FUSION_SET_ID: ac111720-c7d7-11ec-9c26-bb3f9e9d83c4
-          SIGN_OPTIONS: "SIGN_ON_APPDOME"
-          #BUILD_WITH_LOGS: true - Optional
-          #SECOND_OUTPUT: true - Optional
-          #BUILD_TO_TEST: "lambdatest" | "bitbar" | "browserstack" | "saucelabs" - Optional
-          APPDOME_API_TOKEN: ${{secrets.APPDOME_API_KEY}}
-          KEYSTORE_FILE: ${{secrets.KEYSTORE_BASE64}}
-          KEYSTORE_PASSWORD: ${{secrets.KEYSTORE_PASSWORD}}
-          KEYSTORE_ALIAS: ${{secrets.KEYSTORE_ALIAS}}
-          KEYSTORE_KEY_PASSWORD: ${{secrets.KEYSTORE_KEY_PASS}}      
-      
+#    steps:
+    - name: Appdome build-2secure
+      uses: Appdome/github_build-2secure@1.1.1
+      with:
+        APP_FILE: app/build/outputs/apk/release/app-release-unsigned.apk
+        TEAM-ID: 0f2b8ec0-804e-11ec-8707-97e61e2ab1dd
+        FUSION_SET_ID: ac111720-c7d7-11ec-9c26-bb3f9e9d83c4
+        SIGN_OPTIONS: "SIGN_ON_APPDOME"
+        #BUILD_WITH_LOGS: true - Optional
+        #SECOND_OUTPUT: true - Optional
+        #BUILD_TO_TEST: "lambdatest" | "bitbar" | "browserstack" | "saucelabs" - Optional
+        APPDOME_API_TOKEN: ${{secrets.APPDOME_API_KEY}}
+        KEYSTORE_FILE: ${{secrets.KEYSTORE_BASE64}}
+        KEYSTORE_PASSWORD: ${{secrets.KEYSTORE_PASSWORD}}
+        KEYSTORE_ALIAS: ${{secrets.KEYSTORE_ALIAS}}
+        KEYSTORE_KEY_PASSWORD: ${{secrets.KEYSTORE_KEY_PASS}}      
+
       
       
       
