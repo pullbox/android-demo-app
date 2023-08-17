@@ -25,7 +25,7 @@ steps:
     tasks: 'assembleDebug'
 
 - bash: |
-    cd app/build/outputs/apk/release/
+    cd app/build/outputs/
     ls -l 
     
 - task: DownloadSecureFile@1
