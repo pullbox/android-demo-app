@@ -9,8 +9,6 @@ resources:
 
 variables:
 - group: 'variables'
-- name: APPDOME_API_KEY
-  value: $[variables.APPDOME_API_KEY] # uses runtime expression
  
 
 trigger:
@@ -19,16 +17,6 @@ trigger:
 pool:
   vmImage: 'macos-latest'
 
-
-
-steps:
-- script: echo $(APPDOME_API_KEY) # uses macro syntax
-- script: echo "hello Key"  
-- task: DownloadSecureFile@1
-  name: jks
-  displayName: 'Download jks'
-  inputs:
-    secureFile: 'AppdomeLabs-Android_Signing.jks'
 
 - task: Gradle@2
   inputs:
@@ -50,9 +38,9 @@ steps:
     Sign: 'signOnAppdome'
     Token: '$(APPDOME_API_KEY)'
     KeystoreFile: '$(Keystore_FileName)'
-    KeystorePass: '$(KeyStore_Password)'
+    KeystorePass: '$(Keystore_Password)'
     KeystoreAlias: 'appdome'
-    KeyPass: '$(KeyStore_Password)'
+    KeyPass: '$(Keystore_Password)'
     FusionSetId: 'ac111720-c7d7-11ec-9c26-bb3f9e9d83c4'
     TeamId: '0f2b8ec0-804e-11ec-8707-97e61e2ab1dd'
     App: 
