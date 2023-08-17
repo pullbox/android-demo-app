@@ -2,7 +2,10 @@
 # Build your Android project with Gradle.
 # Add steps that test, sign, and distribute the APK, save build artifacts, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/android
-
+variables:
+- group: Appdome
+- name: APPDOME_API_KEY
+  value: $[variables.APPDOME_API_KEY] # uses runtime expression
 
 trigger:
 - main
@@ -31,7 +34,7 @@ steps:
   inputs:
     Platform: 'android'
     Sign: 'signOnAppdome'
-    Token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMGNkZWEwODAtNDJhMC0xMWVjLWFjZmItZDc1MzBmMmM5NDQwIiwic2FsdCI6ImU5MzgyMDQ1LWNhYTktNDhmNy05ZjVhLWIzNzJkNjJkNGFjNiJ9.BLZh5NBQ39M6ZaZ_C6ZLupKU-vfWbTTXacm1b-8u2_k'
+    Token: '$(APPDOME_API_KEY)'
     KeystoreFile: '$(jks.secureFile)'
     KeystorePass: '$(KeyPassword)'
     KeystoreAlias: 'appdome'
