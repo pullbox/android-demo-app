@@ -4,7 +4,7 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/android
 resources:
   pipelines:
-  - pipeline: Appdome # identifier for the resource (used in pipeline resource variables)
+  - pipeline: pullbox.android-demo-app # identifier for the resource (used in pipeline resource variables)
     source: Appdome # name of the pipeline that produces an artifact
 
 variables:
