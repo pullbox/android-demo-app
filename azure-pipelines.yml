@@ -25,8 +25,10 @@ steps:
     tasks: 'assembleDebug'
 
 - bash: |
-    cd app/build
-    ls -l
+    
+    ls -l app/build
+    cd app/build/outputs/apk/release/
+    ls - l 
     
 - task: DownloadSecureFile@1
   inputs:
@@ -44,5 +46,5 @@ steps:
     KeyPass: '$(Keystore_Password)'
     FusionSetId: 'ac111720-c7d7-11ec-9c26-bb3f9e9d83c4'
     TeamId: '0f2b8ec0-804e-11ec-8707-97e61e2ab1dd'
-    App: build/outputs/apk/release/app-release-unsigned.apk
+    App: app/build/outputs/apk/release/app-release-unsigned.apk
 
