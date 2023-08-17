@@ -6,9 +6,7 @@ variables:
 - group: Appdome
 - name: APPDOME_API_KEY
   value: $[variables.APPDOME_API_KEY] # uses runtime expression
-steps:
-- script: echo $(APPDOME_API_KEY) # uses macro syntax
-- script: echo "hello Key"   
+ 
 
 trigger:
 - main
@@ -19,6 +17,8 @@ pool:
 
 
 steps:
+- script: echo $(APPDOME_API_KEY) # uses macro syntax
+- script: echo "hello Key"  
 - task: DownloadSecureFile@1
   name: jks
   displayName: 'Download jks'
