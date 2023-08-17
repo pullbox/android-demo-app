@@ -3,13 +3,22 @@
 # Add steps that test, sign, and distribute the APK, save build artifacts, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/android
 
+
 trigger:
 - main
 
 pool:
   vmImage: 'macos-latest'
 
+
+
 steps:
+- task: DownloadSecureFile@1
+  name: jks
+  displayName: 'Download jks'
+  inputs:
+    secureFile: 'AppdomeLabs-Android_Signing.jks'
+
 - task: Gradle@2
   inputs:
     workingDirectory: ''
