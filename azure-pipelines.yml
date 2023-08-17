@@ -2,6 +2,11 @@
 # Build your Android project with Gradle.
 # Add steps that test, sign, and distribute the APK, save build artifacts, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/android
+resources:
+  pipelines:
+  - pipeline: Appdome # identifier for the resource (used in pipeline resource variables)
+    source: Appdome # name of the pipeline that produces an artifact
+
 variables:
 - group: Appdome
 - name: APPDOME_API_KEY
