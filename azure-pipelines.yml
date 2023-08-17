@@ -27,6 +27,10 @@ steps:
 - bash: |
     ls -l > list.log
     less list.log
+    cd build
+    ls -l
+    cd ../app
+    ls -l
 
 - task: DownloadSecureFile@1
   inputs:
