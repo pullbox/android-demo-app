@@ -17,7 +17,6 @@ trigger:
 pool:
   vmImage: 'macos-latest'
 
-
 - task: Gradle@2
   inputs:
     workingDirectory: ''
