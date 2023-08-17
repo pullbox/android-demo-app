@@ -26,7 +26,7 @@ steps:
 
 - bash: |
     cd app/build/outputs/apk/release/
-    ls - l 
+    ls -l 
     
 - task: DownloadSecureFile@1
   inputs:
