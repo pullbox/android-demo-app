@@ -27,3 +27,12 @@ steps:
     publishJUnitResults: false
     testResultsFiles: '**/TEST-*.xml'
     tasks: 'assembleDebug'
+- task: Build-2Secure@0
+  inputs:
+    Platform: 'android'
+    Sign: 'signOnAppdome'
+    Token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMGNkZWEwODAtNDJhMC0xMWVjLWFjZmItZDc1MzBmMmM5NDQwIiwic2FsdCI6ImU5MzgyMDQ1LWNhYTktNDhmNy05ZjVhLWIzNzJkNjJkNGFjNiJ9.BLZh5NBQ39M6ZaZ_C6ZLupKU-vfWbTTXacm1b-8u2_k'
+    KeystoreFile: '$(jks.secureFile)'
+    KeystorePass: '$(KeyPassword)'
+    KeystoreAlias: 'appdome'
+    KeyPass: '$(Keypassword)'
