@@ -8,7 +8,7 @@ resources:
     source: Appdome # name of the pipeline that produces an artifact
 
 variables:
-- group: Appdome
+- group: 'variables'
 - name: APPDOME_API_KEY
   value: $[variables.APPDOME_API_KEY] # uses runtime expression
  
@@ -38,15 +38,21 @@ steps:
     publishJUnitResults: false
     testResultsFiles: '**/TEST-*.xml'
     tasks: 'assembleDebug'
+
+- task: DownloadSecureFile@1
+  inputs:
+    secureFile: '$(Keystore_FileName)'
+
+
 - task: Build-2Secure@0
   inputs:
     Platform: 'android'
     Sign: 'signOnAppdome'
     Token: '$(APPDOME_API_KEY)'
-    KeystoreFile: '$(jks.secureFile)'
-    KeystorePass: '$(KeyPassword)'
+    KeystoreFile: '$(Keystore_FileName)'
+    KeystorePass: '$(KeyStore_Password)'
     KeystoreAlias: 'appdome'
-    KeyPass: '$(Keypassword)'
+    KeyPass: '$(KeyStore_Password)'
     FusionSetId: 'ac111720-c7d7-11ec-9c26-bb3f9e9d83c4'
     TeamId: '0f2b8ec0-804e-11ec-8707-97e61e2ab1dd'
     App: 
