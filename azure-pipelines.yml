@@ -25,13 +25,9 @@ steps:
     tasks: 'assembleDebug'
 
 - bash: |
-    ls -l > list.log
-    less list.log
-    cd build
+    cd app/build
     ls -l
-    cd ../app
-    ls -l
-
+    
 - task: DownloadSecureFile@1
   inputs:
     secureFile: '$(Keystore_FileName)'
