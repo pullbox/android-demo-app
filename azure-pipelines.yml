@@ -14,8 +14,8 @@ pool:
   vmImage: 'macos-latest'
 
 steps:
-- script: echo $(APPDOME_API_KEY)
-- script: echo $(Keystore_Password)
+# - script: echo $(APPDOME_API_KEY)
+#- script: echo $(Keystore_Password)
 
 - task: Gradle@2
   inputs:
@@ -27,10 +27,6 @@ steps:
     testResultsFiles: '**/TEST-*.xml'
     tasks: 'assembleDebug'
 
-- bash: |
-    cd app/build/outputs/apk/debug/
-    ls -l 
-    echo $(APPDOME_API_KEY)
     
 - task: DownloadSecureFile@1
   name: keystore
