@@ -54,3 +54,4 @@ steps:
    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
    ArtifactName: 'Appdome Protected App'
 
+- script: echo "Built APK file:$(buildTask.AppdomeSecuredApp)"
