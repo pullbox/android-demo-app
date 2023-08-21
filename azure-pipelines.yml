@@ -27,6 +27,10 @@ steps:
     testResultsFiles: '**/TEST-*.xml'
     tasks: 'assembleDebug'
 
+- task: PublishBuildArtifacts@1
+  inputs:
+   PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+   ArtifactName: 'UnProtected App'
     
 - task: DownloadSecureFile@1
   name: keystore
