@@ -54,6 +54,3 @@ steps:
    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
    ArtifactName: 'Appdome Protected App'
 
-- script: |
-  echo "Build AAB file: $(buildTask.AppdomeSecureApp)"
-  echo "Build universal APK file: $(buildTask.AppdomeSecoundOutput)"
