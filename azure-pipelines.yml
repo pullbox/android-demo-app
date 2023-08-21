@@ -27,10 +27,11 @@ steps:
     testResultsFiles: '**/TEST-*.xml'
     tasks: 'assembleDebug'
 
-- task: PublishBuildArtifacts@1
+- task: CopyFiles@2
+  displayName: 'Copy Binaries'
   inputs:
-   PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-   ArtifactName: 'UnProtected App'
+    contents: 'app/build/outputs/apk/debug/*.apk'
+    targetFolder: '$(Build.ArtifactStagingDirectory)'
     
 - task: DownloadSecureFile@1
   name: keystore
