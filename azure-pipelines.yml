@@ -36,7 +36,7 @@ steps:
 
 - publish: '$(Build.ArtifactStagingDirectory)/app/build/outputs/apk/debug'
   displayName: 'Publish Unprotected App'
-  artifact: drop
+  artifact: Unprotected App
 
 - task: DownloadSecureFile@1
   name: keystore
