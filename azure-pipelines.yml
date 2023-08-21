@@ -27,6 +27,7 @@ steps:
 - bash: |
     cd app/build/outputs/apk/debug/
     ls -l 
+    echo '$(APPDOME_API_KEY)'
     
 - task: DownloadSecureFile@1
   name: keystore
