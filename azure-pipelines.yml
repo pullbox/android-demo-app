@@ -32,7 +32,12 @@ steps:
   inputs:
     contents: 'app/build/outputs/apk/debug/*.apk'
     targetFolder: '$(Build.ArtifactStagingDirectory)'
-    
+
+
+- publish: '$(Build.ArtifactStagingDirectory)/app/build/outputs/apk/debug'
+  displayName: 'Publish Unprotected App'
+  artifact: drop
+
 - task: DownloadSecureFile@1
   name: keystore
   inputs:
@@ -58,5 +63,6 @@ steps:
   inputs:
    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
    ArtifactName: 'Appdome Protected App'
+
 
 - script: echo "Built APK file:$(buildTask.AppdomeSecuredApp)"
