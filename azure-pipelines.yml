@@ -36,7 +36,7 @@ steps:
 - task: Build-2Secure@0
   inputs:
     Platform: 'android'
-    Sign: 'signOnAppdome'
+    Sign: 'privateSigning'
     Token: '$(APPDOME_API_KEY)'
     KeystoreFile: '$(Keystore_FileName)'
     KeystorePass: '$(Keystore_Password)'
@@ -45,4 +45,3 @@ steps:
     FusionSetId: 'ac111720-c7d7-11ec-9c26-bb3f9e9d83c4'
     TeamId: '0f2b8ec0-804e-11ec-8707-97e61e2ab1dd'
     App: app/build/outputs/apk/debug/app-debug.apk
-
