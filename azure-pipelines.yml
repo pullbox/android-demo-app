@@ -32,7 +32,6 @@ steps:
   inputs:
     contents: 'app/build/outputs/apk/debug/*.apk'
     targetFolder: '$(Build.ArtifactStagingDirectory)'
-    flattenFolders: true
 
 
 
