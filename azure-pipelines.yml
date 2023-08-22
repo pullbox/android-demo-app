@@ -32,11 +32,14 @@ steps:
   inputs:
     contents: 'app/build/outputs/apk/debug/*.apk'
     targetFolder: '$(Build.ArtifactStagingDirectory)'
+    flattenFolders: true
+
 
 
 - publish: '$(Build.ArtifactStagingDirectory)/app/build/outputs/apk/debug'
   displayName: 'Publish Unprotected App'
   artifact: Unprotected App
+
 
 - task: DownloadSecureFile@1
   name: keystore
