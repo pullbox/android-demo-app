@@ -19,3 +19,7 @@ steps:
         ls -l
 
 
+  - task: CmdLine@2
+    inputs:
+      script: |
+       python3 -version
