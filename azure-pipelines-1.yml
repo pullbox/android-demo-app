@@ -22,4 +22,11 @@ steps:
   - task: CmdLine@2
     inputs:
       script: |
-       python3 -version
+        cd appdome-api-python
+        cd appdome-api-python
+        ls -l
+        python3 appdome_api.py -t 0f2b8ec0-804e-11ec-8707-97e61e2ab1dd \ 
+         -a /Users/danielbechtel/Documents/Appdome/Keystore/AndroidMediaPlayer.aab  \
+         -k $AKS  -ka appdome -kp $AKSPW -kyp $AKSPW -s \
+         -cf 6B:D1:79:F9:5F:7B:BE:64:A3:A5:DC:59:B6:62:E8:67:4F:44:0D:54 \
+         -f $APPDOME_FS_ANDROID_ID -o ./test/Appdome-android-media-player.aab -gp
